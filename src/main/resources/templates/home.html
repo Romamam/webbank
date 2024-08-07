@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2a2a2a;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        nav {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 20px;
+        }
+        .nav-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 0 10px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .nav-btn:hover {
+            background-color: #0056b3;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+        .card {
+            background-color: #333;
+            border: none;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+        .card h2 {
+            color: #4caf50;
+        }
+        .card p {
+            color: #ccc;
+        }
+        .row {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .col {
+            flex: 1;
+            min-width: 300px;
+            margin: 10px;
+        }
+        .visual {
+            width: 100px;
+            height: 100px;
+            background-color: #007bff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+<nav>
+    <a href="/login" class="nav-btn">Log In</a>
+    <a href="/sign-up" class="nav-btn">Sign In</a>
+</nav>
+<div class="container">
+    <h1>Welcome to the Expense Tracker</h1>
+    <p>Keep track of your expenses effortlessly.</p>
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <h2>Total Income</h2>
+                <p>$6,250</p>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <h2>Total Expense</h2>
+                <p>$3,011</p>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <h2>Expense by Category</h2>
+                <div class="visual">$$</div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
