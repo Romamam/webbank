@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1b1b1b;
+            color: #fff;
+            margin: 0;
+            display: flex;
+            height: 100vh;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #141414;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .sidebar a {
+            color: #b8b8b8;
+            text-decoration: none;
+            margin-bottom: 15px;
+            font-size: 18px;
+            display: block;
+        }
+        .sidebar a:hover {
+            color: #fff;
+        }
+        .sidebar h2 {
+            color: #fff;
+            font-size: 22px;
+        }
+        .main-content {
+            flex-grow: 1;
+            padding: 20px;
+        }
+        .main-content h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .chart-container {
+            margin-top: 20px;
+        }
+        canvas {
+            background-color: #2b2b2b;
+            padding: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="sidebar">
+    <div>
+        <h2>Wallet App</h2>
+        <a href="#dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+        <a href="#categories"><i class="fas fa-list-alt"></i> Categories</a>
+        <a href="#transactions"><i class="fas fa-exchange-alt"></i> Transactions</a>
+    </div>
+    <div>
+        <a href="#reports"><i class="fas fa-chart-line"></i> Reports</a>
+        <a href="#settings"><i class="fas fa-cog"></i> Settings</a>
+    </div>
+</div>
+<div class="main-content">
+    <h2>Reports</h2>
+    <a href="#new-report" class="btn"><i class="fas fa-plus"></i> New Report</a>
+    <div class="chart-container">
+        <canvas id="expenseChart"></canvas>
+    </div>
+    <div class="chart-container">
+        <canvas id="incomeChart"></canvas>
+    </div>
+</div>
+
+<script>
+    const expenseCtx = document.getElementById('expenseChart').getContext('2d');
+    const incomeCtx = document.getElementById('incomeChart').getContext('2d');
+
+    const expenseChart = new Chart(expenseCtx, {
+        type: 'bar',
+        data: {
+            labels: ['January', 'February', 'March', 'April', 'May'],
+            datasets: [{
+                label: 'Expenses',
+                data: [1200, 1900, 3000, 500, 2000],
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    const incomeChart = new Chart(incomeCtx, {
+        type: 'line',
+        data: {
+            labels: ['January', 'February', 'March', 'April', 'May'],
+            datasets: [{
+                label: 'Income',
+                data: [3000, 4000, 3200, 2800, 3500],
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
+</body>
+</html>

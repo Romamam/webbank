@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1b1b1b;
+            color: #fff;
+            margin: 0;
+            display: flex;
+            height: 100vh;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #141414;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .sidebar a {
+            color: #b8b8b8;
+            text-decoration: none;
+            margin-bottom: 15px;
+            font-size: 18px;
+            display: block;
+        }
+        .sidebar a:hover {
+            color: #fff;
+        }
+        .sidebar h2 {
+            color: #fff;
+            font-size: 22px;
+        }
+        .main-content {
+            flex-grow: 1;
+            padding: 20px;
+        }
+        .main-content h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        .transaction-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .transaction-table th, .transaction-table td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #2b2b2b;
+        }
+        .transaction-table th {
+            background-color: #2b2b2b;
+        }
+        .transaction-table tr:nth-child(even) {
+            background-color: #2b2b2b;
+        }
+        .transaction-table tr:hover {
+            background-color: #3c3c3c;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .fa-trash, .fa-edit {
+            cursor: pointer;
+        }
+        .actions {
+            display: flex;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="sidebar">
+    <div>
+        <h2>Wallet App</h2>
+        <a href="#dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+        <a href="#categories"><i class="fas fa-list-alt"></i> Categories</a>
+        <a href="#transactions"><i class="fas fa-exchange-alt"></i> Transactions</a>
+    </div>
+    <div>
+        <a href="#reports"><i class="fas fa-chart-line"></i> Reports</a>
+        <a href="#settings"><i class="fas fa-cog"></i> Settings</a>
+    </div>
+</div>
+<div class="main-content">
+    <h2>Transactions</h2>
+    <a href="#new-transaction" class="btn"><i class="fas fa-plus"></i> New Transaction</a>
+    <table class="transaction-table">
+        <thead>
+        <tr>
+            <th>Category</th>
+            <th>Date</th>
+            <th>Amount</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Salary</td>
+            <td>2023-06-10</td>
+            <td>$6,000</td>
+            <td class="actions">
+                <i class="fas fa-edit"></i>
+                <i class="fas fa-trash"></i>
+            </td>
+        </tr>
+        <tr>
+            <td>Groceries</td>
+            <td>2023-06-12</td>
+            <td>$300</td>
+            <td class="actions">
+                <i class="fas fa-edit"></i>
+                <i class="fas fa-trash"></i>
+            </td>
+        </tr>
+        <!-- Додайте інші транзакції тут -->
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
