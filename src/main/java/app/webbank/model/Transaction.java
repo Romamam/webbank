@@ -1,5 +1,6 @@
 package app.webbank.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -21,13 +22,16 @@ public class Transaction {
     private Double amount;
     @Column
     private Date date;
-
+    @Column
+    private String categoryName;
     @ManyToOne
     @JoinColumn(name = "user_id")
+    @JsonBackReference
     private User user;
 
     @ManyToOne
     @JoinColumn(name = "category_id")
+    @JsonBackReference
     private Category category;
 
     public Long getId() {
@@ -52,6 +56,14 @@ public class Transaction {
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public String getCategoryName() {
+        return categoryName;
+    }
+
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
     }
 
     public User getUser() {

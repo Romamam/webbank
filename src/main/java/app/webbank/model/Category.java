@@ -1,5 +1,7 @@
 package app.webbank.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -17,10 +19,21 @@ public class Category {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
+    @JsonBackReference
     private User user;
 
     @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<Transaction> transactions;
+
+    public Category(String name, User user){
+        this.name = name;
+        this.user = user;
+    }
+
+    public Category() {
+
+    }
 
     public Long getId() {
         return id;

@@ -1,5 +1,6 @@
 package app.webbank.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -18,8 +19,10 @@ public class User {
     @Column
     private String role;
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<Transaction> transactions;
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<Category> categories;
 
     public List<Category> getCategories() {
